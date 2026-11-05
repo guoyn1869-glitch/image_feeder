@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "toolpkg_id": "com.operit.image_feeder",
+  "version": "1.0.2",
+  "api_version": "1.0.0",
+  "main": "dist/main.js",
+  "display_name": {
+    "zh": "图递",
+    "en": "ImageRelay"
+  },
+  "description": {
+    "zh": "只做一件事：给一个本地图片路径，把它注册进当前对话的图片池，让模型真正看到画面。不含图库、不含分类、不含搜索，是「路径 → 图片进池 → 模型看见」这条通路的最小实现。",
+    "en": "One job only: given a local image path, register it into the current conversation's image pool so the model can actually see it. No library, no categories, no search — the minimal implementation of path -> pool -> model."
+  },
+  "enabled_by_default": true,
+  "subpackages": [
+    {
+      "id": "image_feeder",
+      "entry": "dist/packages/image_feeder.js",
+      "enabled_by_default": true,
+      "display_name": "图递",
+      "description": "给本地图片路径，注册进对话图片池，让模型看见画面。支持绝对路径 / file://（content:// 实测宿主不支持）；目录会被明确拒绝；注册失败绝不谎报成功。"
+    }
+  ]
+}
